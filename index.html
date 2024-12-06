@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+       body{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        margin: 55px;
+        padding: 150px;
+        background:linear-gradient(rgb(205, 130, 31),rgb(66, 188, 18));
+        color: rgb(0, 0, 0);
+       }
+       #calculator{
+        max-width: 255px;
+        margin: auto;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0,0,0.5);
+        background-color: aquamarine;
+       }
+       input{
+        width: 85%;
+        margin-bottom: 3px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background-color: papayawhip;
+        color: black;
+       }
+       button{
+        width: 20%;
+        margin-bottom: 3px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: medium;
+        border-color: gray;
+        border-radius: 10px;
+        outline: none;
+        background-color: rgb(68, 68, 239);
+       }
+       button:hover{
+        background-color: beige;
+       }
+      #enter:hover{
+        background-color: green;
+      }
+      #clear:hover{
+        background-color: red;
+       }
+       footer {
+      background-color: antiquewhite;
+      margin: 50px;
+      padding: 100px;
+      color: black;
+      text-align: center;
+      padding: 3px;
+      bottom: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>CALCULATOR</h1>
+    <div id="calculator">
+      <input type="text" placeholder="Enter the Number" id="display" /><br />
+      <br />
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('+')">+</button>
+      <br />
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('-')">-</button>
+      
+      
+      <br />
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('*')">*</button>
+      
+      
+      
+      <br />
+      <button onclick="appendToDisplay('9')">9</button>
+      <button id="enter" onclick="calculateResult()">=</button>
+      <button id="clear" onclick="clearDisplay()">C</button>
+      <button onclick="appendToDisplay('/')">/</button>
+    </div>
+    <script>
+      // Javascript Code
+      function appendToDisplay(value){
+        document.getElementById('display').value+= value;
+      }
+
+      function clearDisplay(value){
+        document.getElementById('display').value='';
+      }
+
+      function calculateResult(value){
+        var expression = document.getElementById('display').value;
+        var result;
+        try{
+           result=eval(expression);
+           document.getElementById('display').value=result;        
+          }
+        catch(error){
+          document.getElementById('display').value='error';
+        }
+
+      }
+
+
+    </script>
+
+  </body>
+  <footer>
+    &copy; Copyrights 2024. Designed By Shades Of Vaish✨
+  </footer>
+  
+</html>
